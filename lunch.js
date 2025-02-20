@@ -1,12 +1,11 @@
 /*
  * Modify the contents of the function below, such that:
  *
- * If we're not hungry, we want to tell ourselves to get back to work.
- * Otherwise, we want to pick something up and eat it in the lab when
- * we've got less than 20 minutes or to try a place nearby if we've
- * got between 20 and 30 minutes. If we have any more time than that,
- * we want to remind ourselves that we're in a bootcamp and that we
- * should reconsider how much time we actually have to spare.
+ * NOT hungry --> "get back to work".
+ * HUNGRY: 
+ * 1. time < 20 min -> "pick something up and eat it in the lab" 
+ * 2. 20 min <= time < 30 min --> "try a place nearby"
+ * 3. time > 30 min --> "we're in a bootcamp! You should reconsider how much time you actually have to spare".
  *
  * hungry is a Boolean, representing if you're hungry or not.
  * availableTime is a Number representing the time you have for lunch,
@@ -15,6 +14,20 @@
 
 const whatToDoForLunch = function(hungry, availableTime) {
   console.log("I don't know what to do!");
+ 
+  if (hungry === true){
+    if (availableTime < 20){
+      console.log("Pick up and eat something in the lab.")
+    } else if (20 <= availableTime && availableTime < 30) {
+      console.log("Try a place nearby.")
+    } else {
+      console.log("We're in a bootcamp! You should reconsider how much time you actually have to spare.")
+    };
+    
+  } else if (hungry === false){
+    console.log("If you are not hungry then get back to work!")
+  };
+
 }
 
 
